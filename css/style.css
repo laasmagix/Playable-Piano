@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:regular,500,600&display=swap");
+/* Reset styles */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background-color: #e3f2fd;
+}
+.wrapper {
+  border-radius: 20px;
+  padding: 35px 40px;
+  background-color: #141414;
+}
+.header {
+  color: #b2b2b2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__title {
+  font-size: 1.6rem;
+}
+.column {
+  display: flex;
+  align-items: center;
+}
+.header__volume-slider span,
+.header__volume-checkbox span {
+  font-weight: 500;
+  font-size: 1.19rem;
+}
+.column span {
+  margin-right: 15px;
+}
+.header__volume-slider input {
+  accent-color: #fff;
+}
+.header__keys-checkbox input {
+  width: 60px;
+  height: 30px;
+  appearance: none;
+  background-color: #4b4b4b;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.header__keys-checkbox input:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: inherit;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: #8c8c8c;
+  transition: all 0.3s ease;
+}
+.header__keys-checkbox input:checked:before {
+  left: 35px;
+  background-color: #fff;
+}
+.piano-keys {
+  display: flex;
+  margin-top: 40px;
+}
+
+.piano-keys span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.13rem;
+}
+.piano-keys .key {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  color: #a2a2a2;
+  text-transform: uppercase;
+}
+.white {
+  width: 70px;
+  height: 230px;
+  border-radius: 8px;
+  background: linear-gradient(#fff 96%, #eee 4%);
+  border: 1px solid #000;
+}
+.white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.black {
+  width: 44px;
+  height: 140px;
+  position: relative;
+  z-index: 2;
+  margin: 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+.black.active {
+  box-shadow: inset -5px 5px 20px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to bottom, #000 0%, #434343);
+}
+
+.hide span {
+  display: none;
+}
+
+@media (max-width: 815px) {
+  .wrapper {
+    padding: 25px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .header :where(.header__title, .column) {
+    margin-bottom: 13px;
+  }
+  .header__volume-slider {
+    max-width: 100px;
+    justify-content: center;
+  }
+  .piano-keys {
+    margin-top: 20px;
+  }
+  .piano-keys .key:nth-child(13),
+  .piano-keys .key:nth-child(14),
+  .piano-keys .key:nth-child(15),
+  .piano-keys .key:nth-child(16),
+  .piano-keys .key:nth-child(17) {
+    display: none;
+  }
+  .black {
+    height: 100px;
+    width: 40px;
+    margin: 0 -20px;
+  }
+  .white {
+    height: 180px;
+    width: 60px;
+  }
+}
+@media (max-width: 615px) {
+  .piano-keys .key:nth-child(12),
+  .piano-keys .key:nth-child(11),
+  .piano-keys .key:nth-child(10),
+  .piano-keys .key:nth-child(9) {
+    display: none;
+  }
+  .white {
+    width: 50px;
+  }
+}
